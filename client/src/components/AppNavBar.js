@@ -11,7 +11,7 @@ import {
 } from 'reactstrap';
 
 
-function AppNavBar(props) {
+function AppNavBar() {
 
     const [isOpen, setOpen] = useState(false);
 
