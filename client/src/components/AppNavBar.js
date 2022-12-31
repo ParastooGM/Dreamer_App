@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
     Collapse,
     Navbar,
@@ -7,19 +7,19 @@ import {
     Nav,
     NavItem,
     NavLink,
-    Container
-} from 'reactstrap';
-
+    Container,
+} from "reactstrap";
+import SettingsSystemDaydreamRoundedIcon from "@material-ui/icons/SettingsSystemDaydreamRounded";
 
 function AppNavBar() {
-
     const [isOpen, setOpen] = useState(false);
 
     function toggle() {
         setOpen(!isOpen);
-    };
+    }
 
-    return ( < div >
+    return ( <
+        div >
         <
         Navbar color = "dark"
         dark expand = "sm"
@@ -27,9 +27,11 @@ function AppNavBar() {
         <
         Container >
         <
-        NavbarBrand href = "/" > Dreams < /NavbarBrand>  <
+        NavbarBrand href = "/" > { " " } <
+        SettingsSystemDaydreamRoundedIcon / > Dreams { " " } <
+        /NavbarBrand>{" "} <
         NavbarToggler onClick = { toggle }
-        />  <
+        />{" "} <
         Collapse isOpen = { isOpen }
         navbar >
         <
@@ -38,18 +40,14 @@ function AppNavBar() {
         <
         NavItem >
         <
-        NavLink href = "" >
-        Github <
-        /NavLink> < /
-        NavItem > <
-        /Nav> < /
-        Collapse >
-        <
-        /Container>  < /
-        Navbar > <
-        /div >
-    )
-
+        NavLink href = "" > Github < /NavLink>{" "} <
+        /NavItem>{" "} <
+        /Nav>{" "} <
+        /Collapse> <
+        /Container>{" "} <
+        /Navbar>{" "} <
+        /div>
+    );
 }
 
 export default AppNavBar;

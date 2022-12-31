@@ -1,4 +1,5 @@
 import React from "react";
+import DeleteForeverRoundedIcon from "@material-ui/icons/DeleteForeverRounded";
 
 function AppCard(props) {
     function handleClick() {
@@ -9,7 +10,10 @@ function AppCard(props) {
         div className = "AppCard" >
         <
         h1 > { props.title } < /h1> <p> {props.content} </p > { " " } <
-        button onClick = { handleClick } > Delete < /button>{" "} <
+        button onClick = { handleClick } > { " " } <
+        DeleteForeverRoundedIcon / >
+        <
+        /button>{" "} <
         /div>
     );
 }

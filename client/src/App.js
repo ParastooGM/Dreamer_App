@@ -30,7 +30,7 @@ function App() {
         AppNavBar / >
         <
         CreateArea onAdd = { addItem }
-        />{" "} {
+        /> {
             allDreams.map((dreamItem, index) => {
                 return ( <
                     CSSTransition key = { index }
