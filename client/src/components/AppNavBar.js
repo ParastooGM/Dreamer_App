@@ -10,6 +10,7 @@ import {
     Container,
 } from "reactstrap";
 import SettingsSystemDaydreamRoundedIcon from "@material-ui/icons/SettingsSystemDaydreamRounded";
+import { red } from "@material-ui/core/colors";
 
 function AppNavBar() {
     const [isOpen, setOpen] = useState(false);
@@ -21,11 +22,13 @@ function AppNavBar() {
     return ( <
         div >
         <
-        Navbar color = "dark"
+        Navbar style = {
+            { backgroundColor: "#ADD8E6" } }
         dark expand = "sm"
         className = "mb-5" >
         <
-        Container >
+        Container style = {
+            { marginLeft: 0 } } >
         <
         NavbarBrand href = "/" > { " " } <
         SettingsSystemDaydreamRoundedIcon / > Dreams { " " } <
@@ -33,17 +36,8 @@ function AppNavBar() {
         NavbarToggler onClick = { toggle }
         />{" "} <
         Collapse isOpen = { isOpen }
-        navbar >
-        <
-        Nav className = "ml-auto"
-        navbar >
-        <
-        NavItem >
-        <
-        NavLink href = "" > Github < /NavLink>{" "} <
-        /NavItem>{" "} <
-        /Nav>{" "} <
-        /Collapse> <
+        navbar > { " " } <
+        /Collapse>{" "} <
         /Container>{" "} <
         /Navbar>{" "} <
         /div>

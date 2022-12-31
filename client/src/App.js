@@ -1,11 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import AppCard from "./components/AppCard";
 import AppNavBar from "./components/AppNavBar";
 import CreateArea from "./components/AppCreateArea";
-import { CSSTransition } from "react-transition-group";
 
 function App() {
     const [allDreams, setAllDreams] = useState([]);
@@ -22,6 +20,7 @@ function App() {
                 return index !== id;
             });
         });
+        console.log(allDreams);
     }
 
     return ( <
@@ -30,20 +29,16 @@ function App() {
         AppNavBar / >
         <
         CreateArea onAdd = { addItem }
-        /> {
+        />{" "} {
             allDreams.map((dreamItem, index) => {
                 return ( <
-                    CSSTransition key = { index }
-                    timeout = { 500 }
-                    className = "fade" > { " " } <
                     AppCard key = { index }
-                    id = { uuidv4() }
+                    id = { index }
                     title = { dreamItem.title }
                     content = { dreamItem.content }
                     onDelete = { deleteItem }
                     onAdd = { addItem }
-                    />{" "} <
-                    /CSSTransition>
+                    />
                 );
             })
         } { " " } <
