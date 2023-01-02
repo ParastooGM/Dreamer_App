@@ -4,7 +4,7 @@ const initailState = {
     items: [{ title: "Day 1", content: "I was flying." }],
 };
 
-export default function(state = initailState, action) {
+const itemReducer = function(state = initailState, action) {
     switch (action.type) {
         case GET_ITEMS:
             return {
@@ -25,4 +25,6 @@ export default function(state = initailState, action) {
         default:
             return state;
     }
-}
+};
+
+export default itemReducer;

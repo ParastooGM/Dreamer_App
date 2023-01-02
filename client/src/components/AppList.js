@@ -1,21 +1,17 @@
 import React from "react";
 import { Container } from "reactstrap";
 import { getItems, deleteItem } from "../actions/itemActions";
+import AppCard from "./AppCard";
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";
 
-
 function AppList(props) {
-
-    componentDidMount() {
-        props.getItems();
-    };
-
     function handleDelete(id) {
         props.deleteItem(id);
-    };
+    }
 
-    return ( < Container > {
+    return ( <
+        Container > { " " } {
             props.item.items.map((dreamItem, index) => {
                 return ( <
                     AppCard key = { index }
@@ -24,19 +20,20 @@ function AppList(props) {
                     content = { dreamItem.content }
                     onDelete = { handleDelete }
                     />
-                )
+                );
             })
-        } < /Container>);
+        } { " " } <
+        /Container>
+    );
+}
 
-    };
+AppList.propTypes = {
+    getItems: PropTypes.func.isRequired,
+    item: PropTypes.object.isRequired,
+};
 
-    AppList.propTypes = {
-        getItems: PropTypes.func.isRequired,
-        item: PropTypes.object.isRequired
-    };
+const mapStateToProps = (state) => ({
+    item: state.item, // the itemReducer, named as item in the combined root reducer.
+});
 
-    const mapStateToProps = (state) => ({
-        item: state.item // the itemReducer, named as item in the combined root reducer.
-    });
-
-    export default connect(mapStateToProps, { getItems, deleteItem })(AppList);
+export default connect(mapStateToProps, { getItems, deleteItem })(AppList);

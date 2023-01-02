@@ -82,3 +82,15 @@ form.create-note button {
     cursor: pointer;
     outline: none;
 }
+
+.dream-nav-bar {
+    background-color: #b2beb5;
+    opacity: 0.8;
+    height: 4.5rem;
+    margin-bottom: 4.5rem !important;
+}
+
+.dream-nav-brand {
+    opacity: 1;
+    font-size: 1.5rem;
+}

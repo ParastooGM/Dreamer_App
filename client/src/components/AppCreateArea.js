@@ -10,6 +10,8 @@ function CreateArea(props) {
         content: "",
     });
 
+    const [isExpanded, setExpanded] = useState(false);
+
     function handleClick(event) {
         props.addItem(newItem);
         event.preventDefault();
@@ -18,8 +20,6 @@ function CreateArea(props) {
             content: "",
         });
     }
-
-    const [isExpanded, setExpanded] = useState(false);
 
     function expand() {
         setExpanded(true);

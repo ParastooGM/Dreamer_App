@@ -1,16 +1,6 @@
 import React, { useState } from "react";
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    Container,
-} from "reactstrap";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand } from "reactstrap";
 import SettingsSystemDaydreamRoundedIcon from "@material-ui/icons/SettingsSystemDaydreamRounded";
-import { red } from "@material-ui/core/colors";
 
 function AppNavBar() {
     const [isOpen, setOpen] = useState(false);
@@ -20,27 +10,19 @@ function AppNavBar() {
     }
 
     return ( <
-        div >
+        Navbar dark expand = "sm"
+        className = "mb-5 dream-nav-bar" >
         <
-        Navbar style = {
-            { backgroundColor: "#B2BEB5" } }
-        dark expand = "sm"
-        className = "mb-5" >
-        <
-        Container style = {
-            { marginLeft: 0 } } >
-        <
-        NavbarBrand href = "/" > { " " } <
-        SettingsSystemDaydreamRoundedIcon / > Dreams { " " } <
+        NavbarBrand className = "dream-nav-brand"
+        href = "/" > { " " } <
+        SettingsSystemDaydreamRoundedIcon / > Dream Journal { " " } <
         /NavbarBrand>{" "} <
         NavbarToggler onClick = { toggle }
         />{" "} <
         Collapse isOpen = { isOpen }
         navbar > { " " } <
         /Collapse>{" "} <
-        /Container>{" "} <
-        /Navbar>{" "} <
-        /div>
+        /Navbar>
     );
 }
 
