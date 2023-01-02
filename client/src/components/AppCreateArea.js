@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
+import { addItem } from "../actions/itemActions";
+import { connect } from "react-redux";
 
 function CreateArea(props) {
+    const [newItem, setNewItem] = useState({
+        title: "",
+        content: "",
+    });
+
     function handleClick(event) {
-        props.onAdd(item);
+        props.addItem(newItem);
         event.preventDefault();
-        setItem({
+        setNewItem({
             title: "",
             content: "",
         });
     }
-
-    const [item, setItem] = useState({
-        title: "",
-        content: "",
-    });
 
     const [isExpanded, setExpanded] = useState(false);
 
@@ -25,7 +27,7 @@ function CreateArea(props) {
 
     function handleChange(event) {
         const { name, value } = event.target;
-        setItem((prevItem) => {
+        setNewItem((prevItem) => {
             return {
                 ...prevItem,
                 [name]: value,
@@ -39,14 +41,14 @@ function CreateArea(props) {
         form className = "create-note" > { " " } {
             isExpanded && ( <
                 input name = "title"
-                value = { item.title }
+                value = { newItem.title }
                 onChange = { handleChange }
                 placeholder = "Title" >
                 < /input>
             )
         } { " " } <
         textarea name = "content"
-        value = { item.content }
+        value = { newItem.content }
         onChange = { handleChange }
         onClick = { expand }
         placeholder = "Describe your dream..."
@@ -60,4 +62,8 @@ function CreateArea(props) {
     );
 }
 
-export default CreateArea;
+const mapStateToProps = (state) => ({
+    item: state.item, // the itemReducer, named as item in the combined root reducer.
+});
+
+export default connect(mapStateToProps, { addItem })(CreateArea);

@@ -23,7 +23,7 @@ function AppNavBar() {
         div >
         <
         Navbar style = {
-            { backgroundColor: "#ADD8E6" } }
+            { backgroundColor: "#B2BEB5" } }
         dark expand = "sm"
         className = "mb-5" >
         <
