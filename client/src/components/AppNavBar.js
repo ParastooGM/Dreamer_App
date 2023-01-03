@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand } from "reactstrap";
-import SettingsSystemDaydreamRoundedIcon from "@material-ui/icons/SettingsSystemDaydreamRounded";
+import { GiDreamCatcher } from "react-icons/gi";
 
 function AppNavBar() {
     const [isOpen, setOpen] = useState(false);
@@ -15,7 +15,7 @@ function AppNavBar() {
         <
         NavbarBrand className = "dream-nav-brand"
         href = "/" > { " " } <
-        SettingsSystemDaydreamRoundedIcon / > Dream Journal { " " } <
+        GiDreamCatcher / > Dream Journal { " " } <
         /NavbarBrand>{" "} <
         NavbarToggler onClick = { toggle }
         />{" "} <

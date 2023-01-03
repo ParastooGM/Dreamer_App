@@ -11,6 +11,7 @@ html {
 body {
     background-color: #a1d6e6;
     background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+    font-family: Leelawadee;
 }
 
 .AppCard {
@@ -83,6 +84,14 @@ form.create-note button {
     outline: none;
 }
 
+.visualize-button {
+    right: 60px !important;
+}
+
+.visualize-button:hover {
+    background-color: lightgray;
+}
+
 .dream-nav-bar {
     background-color: #b2beb5;
     opacity: 0.8;
@@ -92,5 +101,6 @@ form.create-note button {
 
 .dream-nav-brand {
     opacity: 1;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    font-family: Gabriola;
 }

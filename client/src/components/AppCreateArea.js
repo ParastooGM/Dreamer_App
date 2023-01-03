@@ -3,6 +3,7 @@ import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import { addItem } from "../actions/itemActions";
 import { connect } from "react-redux";
+import RemoveRedEyeIcon from "@material-ui/icons/RemoveRedEye";
 
 function CreateArea(props) {
     const [newItem, setNewItem] = useState({
@@ -52,11 +53,15 @@ function CreateArea(props) {
         onChange = { handleChange }
         onClick = { expand }
         placeholder = "Describe your dream..."
-        row = { isExpanded ? 3 : 1 } >
+        rows = { isExpanded ? 5 : 2 } >
         < /textarea>{" "} <
         Fab onClick = { handleClick } > { " " } <
         AddIcon / > { " " } <
         /Fab>{" "} <
+        button className = "visualize-button" > { " " } <
+        RemoveRedEyeIcon / >
+        <
+        /button>{" "} <
         /form>{" "} <
         /div>
     );

@@ -1,7 +1,7 @@
 import { GET_ITEMS, DELETE_ITEM, ADD_ITEM } from "../actions/types";
 
 const initailState = {
-    items: [{ title: "Day 1", content: "I was flying." }],
+    items: [],
 };
 
 const itemReducer = function(state = initailState, action) {
