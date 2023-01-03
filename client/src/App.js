@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import React, { useState } from "react";
+import React from "react";
 import AppList from "./components/AppList";
 import AppNavBar from "./components/AppNavBar";
 import CreateArea from "./components/AppCreateArea";

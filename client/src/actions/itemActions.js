@@ -1,4 +1,4 @@
-import { GET_ITEMS, DELETE_ITEM, ADD_ITEM } from "./types";
+import { GET_ITEMS, DELETE_ITEM, ADD_ITEM, GENERATE_IMG } from "./types";
 
 export const getItems = () => {
     return {
@@ -17,5 +17,12 @@ export const addItem = (item) => {
     return {
         type: ADD_ITEM,
         payload: item,
+    };
+};
+
+export const generateIMG = (prompt) => {
+    return {
+        type: GENERATE_IMG,
+        payload: prompt,
     };
 };
