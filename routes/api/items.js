@@ -9,7 +9,7 @@ const Item = require("../../models/Item");
 router.get("/", (req, res) => {
     Item.find()
         .sort({ date: -1 })
-        .then(items => res.json(items))
+        .then((items) => res.json(items));
 });
 
 // @route POST api/items
@@ -17,19 +17,17 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
     const new_item = new Item({
         title: req.body.title,
-        description: req.body.description
-    })
-    new_item.save().then(item => res.json(item))
+        content: req.body.content,
+    });
+    new_item.save().then((item) => res.json(item));
 });
-
 
 // @route Delete api/items
 // @desc Delete an item.
 router.delete("/:id", (req, res) => {
     Item.findById(req.params.id)
-        .then(item => item.remove().then(() => res.json({ success: true })))
-        .catch(err => res.status(404).json({ success: false }))
+        .then((item) => item.remove().then(() => res.json({ success: true })))
+        .catch((err) => res.status(404).json({ success: false }));
 });
-
 
 module.exports = router;

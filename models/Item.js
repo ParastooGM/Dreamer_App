@@ -4,17 +4,16 @@ const Schema = mongoose.Schema;
 const ItemSchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: true,
     },
-    description: {
+    content: {
         type: String,
-        required: true
+        required: true,
     },
     date: {
         type: Date,
-        default: Date.now
-    }
-
+        default: Date.now,
+    },
 });
 
-module.exports = Item = mongoose.model('item', ItemSchema)
+module.exports = Item = mongoose.model("item", ItemSchema);

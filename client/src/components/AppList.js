@@ -4,18 +4,23 @@ import { getItems, deleteItem } from "../actions/itemActions";
 import AppCard from "./AppCard";
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";
+import { useEffect } from "react";
 
 function AppList(props) {
+    useEffect(() => {
+        props.getItems();
+    }, []);
+
     function handleDelete(id) {
         props.deleteItem(id);
     }
 
     return ( <
         Container > { " " } {
-            props.item.items.map((dreamItem, index) => {
+            props.item.items.map((dreamItem) => {
                 return ( <
-                    AppCard key = { index }
-                    id = { index }
+                    AppCard key = { dreamItem._id }
+                    id = { dreamItem._id }
                     title = { dreamItem.title }
                     content = { dreamItem.content }
                     onDelete = { handleDelete }
