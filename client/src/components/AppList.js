@@ -23,6 +23,7 @@ function AppList(props) {
                     id = { dreamItem._id }
                     title = { dreamItem.title }
                     content = { dreamItem.content }
+                    url = { dreamItem.url }
                     onDelete = { handleDelete }
                     />
                 );

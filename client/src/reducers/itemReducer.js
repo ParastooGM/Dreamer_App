@@ -3,6 +3,7 @@ import {
     DELETE_ITEM,
     ADD_ITEM,
     ITEMS_LOADING,
+    GENERATE_IMG,
 } from "../actions/types";
 
 const initailState = {
@@ -34,6 +35,15 @@ const itemReducer = function(state = initailState, action) {
                 items: state.items.filter((dream) => {
                     return dream._id !== action.payload;
                 }),
+            };
+        case GENERATE_IMG:
+            state.items.forEach(function(obj) {
+                if (obj._id === action.payload[0]) {
+                    obj.url = action.payload[1];
+                }
+            });
+            return {
+                ...state,
             };
         default:
             return state;

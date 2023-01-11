@@ -18,6 +18,7 @@ router.post("/", (req, res) => {
     const new_item = new Item({
         title: req.body.title,
         content: req.body.content,
+        url: req.body.url,
     });
     new_item.save().then((item) => res.json(item));
 });
@@ -27,6 +28,18 @@ router.post("/", (req, res) => {
 router.delete("/:id", (req, res) => {
     Item.findById(req.params.id)
         .then((item) => item.remove().then(() => res.json({ success: true })))
+        .catch((err) => res.status(404).json({ success: false }));
+});
+
+// @route Put api/items
+// @desc Update an item.
+router.put("/:id", (req, res) => {
+    Item.findById(req.params.id)
+        .then((item) => {
+            console.log();
+            item.url = req.body.url;
+            item.save().then((item) => res.json(item));
+        })
         .catch((err) => res.status(404).json({ success: false }));
 });
 

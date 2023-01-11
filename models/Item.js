@@ -14,6 +14,10 @@ const ItemSchema = new Schema({
         type: Date,
         default: Date.now,
     },
+    url: {
+        type: String,
+        default: "",
+    },
 });
 
 module.exports = Item = mongoose.model("item", ItemSchema);

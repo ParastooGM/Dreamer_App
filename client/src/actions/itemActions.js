@@ -35,11 +35,29 @@ export const addItem = (item) => (dispatch) => {
     );
 };
 
-export const generateIMG = (prompt) => {
-    return {
-        type: GENERATE_IMG,
-        payload: prompt,
-    };
+export const generateIMG = (id, prompt) => (dispatch) => {
+    axios({
+        method: "post",
+        url: "https://api.openai.com/v1/images/generations",
+        data: {
+            prompt: prompt,
+            n: 1,
+            size: "1024x1024",
+        },
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + String(window.env.OPENAI_API_KEY),
+        },
+    }).then(function(response) {
+        axios
+            .put(`api/items/${id}`, { url: response.data.data[0].url })
+            .then((res) =>
+                dispatch({
+                    type: GENERATE_IMG,
+                    payload: [id, response.data.data[0].url],
+                })
+            );
+    });
 };
 
 export const setItemsLoading = () => {

@@ -37,9 +37,6 @@ body {
 }
 
 .AppCard button {
-    position: relative;
-    float: right;
-    margin-right: 10px;
     color: #b2beb5;
     border: none;
     width: 36px;
@@ -85,10 +82,14 @@ form.create-note button {
 }
 
 .visualize-button {
-    right: 60px !important;
+    right: 5px !important;
 }
 
 .visualize-button:hover {
+    background-color: lightgray;
+}
+
+.delete-button:hover {
     background-color: lightgray;
 }
 

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
-import { addItem, generateIMG } from "../actions/itemActions";
+import { addItem } from "../actions/itemActions";
 import { connect } from "react-redux";
-import RemoveRedEyeIcon from "@material-ui/icons/RemoveRedEye";
 import { Tooltip } from "@material-ui/core";
 
 function CreateArea(props) {
     const [newItem, setNewItem] = useState({
         title: "",
         content: "",
+        url: "",
     });
 
     const [isExpanded, setExpanded] = useState(false);
@@ -20,6 +20,7 @@ function CreateArea(props) {
         setNewItem({
             title: "",
             content: "",
+            url: "",
         });
     }
 
@@ -35,12 +36,6 @@ function CreateArea(props) {
                 [name]: value,
             };
         });
-    }
-
-    function visualizeTitle(event) {
-        //props.generateIMG(newItem.title);
-        event.preventDefault();
-        console.log(props.img);
     }
 
     return ( <
@@ -69,15 +64,6 @@ function CreateArea(props) {
         <
         /Tooltip>{" "} <
         /Fab>{" "} <
-        button className = "visualize-button"
-        onClick = { visualizeTitle } >
-        <
-        Tooltip title = "Visualize Dream Title" >
-        <
-        RemoveRedEyeIcon / >
-        <
-        /Tooltip>{" "} <
-        /button>{" "} <
         /form>{" "} <
         /div>
     );
@@ -85,7 +71,6 @@ function CreateArea(props) {
 
 const mapStateToProps = (state) => ({
     item: state.item, // the itemReducer, named as item in the combined root reducer.
-    img: state.image, // the imageReducer, named as image in the combined root reducer.
 });
 
-export default connect(mapStateToProps, { addItem, generateIMG })(CreateArea);
+export default connect(mapStateToProps, { addItem })(CreateArea);
