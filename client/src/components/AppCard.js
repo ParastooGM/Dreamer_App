@@ -57,7 +57,7 @@ function AppCard(props) {
         /div>{" "} <
         div style = {
             { margin: "auto", textAlign: "center" } } > { " " } {
-            props.url.length != 0 && ( <
+            props.url.length !== 0 && ( <
                 img src = { props.url }
                 alt = { props.title }
                 width = "250"
