@@ -6,27 +6,29 @@
 
 html {
     font-family: "Montserrat", sans-serif;
+    padding-bottom: 5%;
 }
 
 body {
     background-color: #a1d6e6;
     background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
-    font-family: Leelawadee;
+    font-family: Andale Mono, monospace;
 }
 
 .AppCard {
-    background: #fff;
+    background: #faf9f6;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
     width: 240px;
-    margin: 16px;
+    margin: auto;
     float: left;
+    background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
 }
 
 .AppCard h1 {
-    font-size: 1.1em;
-    margin-bottom: 6px;
+    font-size: 1.3em;
+    margin: 6% auto;
 }
 
 .AppCard p {
@@ -37,7 +39,8 @@ body {
 }
 
 .AppCard button {
-    color: #b2beb5;
+    background: #b2beb5;
+    color: #fff;
     border: none;
     width: 36px;
     height: 36px;
@@ -49,7 +52,7 @@ form.create-note {
     position: relative;
     width: 480px;
     margin: 30px auto 20px auto;
-    background: #fff;
+    background: #faf9f6;
     padding: 15px;
     border-radius: 7px;
     box-shadow: 0 1px 5px rgb(138, 137, 137);
@@ -63,6 +66,7 @@ form.create-note textarea {
     outline: none;
     font-size: 1.2em;
     font-family: inherit;
+    background: #faf9f6;
     resize: none;
 }
 
@@ -81,16 +85,13 @@ form.create-note button {
     outline: none;
 }
 
-.visualize-button {
-    right: 5px !important;
-}
-
-.visualize-button:hover {
+.cardbutton:hover {
     background-color: lightgray;
 }
 
-.delete-button:hover {
-    background-color: lightgray;
+.cardbutton {
+    border-radius: 50%;
+    margin: 1%;
 }
 
 .dream-nav-bar {

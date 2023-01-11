@@ -20,16 +20,17 @@ function AppCard(props) {
         style = {
             {
                 width: "30%",
-                maxHeight: "350px",
+                height: "350px",
                 overflowY: "auto",
                 padding: "2%",
+                paddingTop: "1%",
             }
         } >
         <
         div style = {
             { margin: "auto", textAlign: "center", marginBottom: "3%" } } >
         <
-        button className = "delete-button"
+        button className = "cardbutton"
         onClick = { handleClick } > { " " } <
         Tooltip title = "Delete Dream" >
         <
@@ -37,7 +38,7 @@ function AppCard(props) {
         <
         /Tooltip>{" "} <
         /button>{" "} <
-        button className = "visualize-button"
+        button className = "cardbutton"
         onClick = { visualizeTitle } >
         <
         Tooltip title = "Visualize Dream Title" >
