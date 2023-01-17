@@ -24,6 +24,7 @@ function AppList(props) {
                     title = { dreamItem.title }
                     content = { dreamItem.content }
                     url = { dreamItem.url }
+                    date = { dreamItem.date }
                     onDelete = { handleDelete }
                     />
                 );

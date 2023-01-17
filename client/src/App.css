@@ -94,6 +94,14 @@ form.create-note button {
     margin: 1%;
 }
 
+.item-date {
+    color: #b2beb5;
+    display: inline;
+    font-size: 1.1rem;
+    margin-right: 35%;
+    margin-left: 2%;
+}
+
 .dream-nav-bar {
     background-color: #b2beb5;
     opacity: 0.8;
