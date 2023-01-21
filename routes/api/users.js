@@ -89,7 +89,7 @@ router.post("/auth", (req, res) => {
     });
 });
 
-// @route Post api/useres/user
+// @route Post api/users/user
 // @desc Get user data
 // @access Private
 router.get("/user", auth, (req, res) => {

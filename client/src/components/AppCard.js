@@ -24,11 +24,16 @@ function AppCard(props) {
                 overflowY: "auto",
                 padding: "2%",
                 paddingTop: "1%",
+                textAlign: "justify",
+                textJustify: "inter-word",
             }
         } >
         <
         div style = {
-            { marginBottom: "3%" } } >
+            {
+                marginBottom: "3%",
+            }
+        } >
         <
         h4 className = "item-date" > { String(props.date).slice(0, 10) } < /h4>{" "} <
         button className = "cardbutton"

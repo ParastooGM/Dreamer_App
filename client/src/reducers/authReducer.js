@@ -10,7 +10,7 @@ import {
 } from "../actions/types";
 
 const initialState = {
-    token: localStorage.getItem("token"),
+    token: localStorage.getItem("token"), // The localStorage object allows you to save key/value pairs in the browser.
     isAuthenticated: false,
     isLoading: false,
     user: null,
@@ -42,6 +42,7 @@ export default function(state = initialState, action) {
         case LOGIN_FAIL:
         case LOGOUT_SUCCESS:
         case REGISTER_FAIL:
+            localStorage.removeItem("token");
             return {
                 ...state,
                 token: null,
