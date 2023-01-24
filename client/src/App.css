@@ -5,45 +5,48 @@
 }
 
 html {
-    font-family: "Montserrat", sans-serif;
     padding-bottom: 5%;
 }
 
 body {
     background-color: #a1d6e6;
     background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
-    font-family: Andale Mono, monospace;
+    font-family: Palatino, URW Palladio L, serif;
 }
 
 .AppCard {
     background: #faf9f6;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
-    padding: 10px;
-    width: 240px;
     margin: 20px;
     float: left;
     background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+    width: 30%;
+    height: 350px;
+    overflow-y: auto;
+    padding: 2.5%;
+    padding-top: 2%;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .AppCard h1 {
-    font-size: 1.3em;
-    margin: 6% auto;
+    font-size: 1.2em;
+    margin: 8% auto 6% auto;
+    text-align: center;
 }
 
 .AppCard p {
-    font-size: 1.1em;
+    font-size: 1rem;
     margin-bottom: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
 }
 
 .AppCard button {
     background: #b2beb5;
     color: #fff;
     border: none;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
     outline: none;
 }
@@ -91,20 +94,18 @@ form.create-note button {
 
 .cardbutton {
     border-radius: 50%;
-    margin: 1%;
 }
 
 .item-date {
     color: #b2beb5;
     display: inline;
     font-size: 1.1rem;
-    margin-right: 35%;
-    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .dream-nav-bar {
     background-color: #b2beb5;
-    opacity: 0.8;
+    opacity: 0.82;
     height: 4.5rem;
     margin-bottom: 4.5rem !important;
 }
@@ -113,4 +114,9 @@ form.create-note button {
     opacity: 1;
     font-size: 2.5rem;
     font-family: Gabriola;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 1.3rem !important;
 }

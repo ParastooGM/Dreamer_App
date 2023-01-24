@@ -16,29 +16,20 @@ function AppCard(props) {
     }
 
     return ( <
-        div className = "AppCard"
-        style = {
-            {
-                width: "30%",
-                height: "350px",
-                overflowY: "auto",
-                padding: "2%",
-                paddingTop: "1%",
-                textAlign: "justify",
-                textJustify: "inter-word",
-            }
-        } >
+        div className = "AppCard" >
         <
         div style = {
             {
-                marginBottom: "3%",
+                margin: "auto",
+                textAlign: "center",
+                padding: "3%",
             }
         } >
         <
         h4 className = "item-date" > { String(props.date).slice(0, 10) } < /h4>{" "} <
         button className = "cardbutton"
         onClick = { handleClick } > { " " } <
-        Tooltip title = "Delete Dream" >
+        Tooltip title = "Delete" >
         <
         DeleteForeverRoundedIcon / >
         <
@@ -47,7 +38,7 @@ function AppCard(props) {
         button className = "cardbutton"
         onClick = { visualizeTitle } >
         <
-        Tooltip title = "Visualize Dream Title" >
+        Tooltip title = "Visualize Title" >
         <
         RemoveRedEyeIcon / >
         <
