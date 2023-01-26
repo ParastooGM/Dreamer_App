@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import { GiDreamCatcher } from "react-icons/gi";
 import RegisterModal from "./auth/RegisterModal";
+import Logout from "./auth/Logout";
 
 function AppNavBar() {
     const [isOpen, setOpen] = useState(false);
@@ -31,12 +32,17 @@ function AppNavBar() {
         navbar > { " " } <
         Nav className = "ml-auto"
         style = {
-            { marginLeft: "92%" } }
+            { marginLeft: "87%" } }
         navbar >
         <
         NavItem >
         <
         RegisterModal / >
+        <
+        /NavItem>{" "} <
+        NavItem >
+        <
+        Logout / >
         <
         /NavItem>{" "} <
         /Nav>{" "} <
