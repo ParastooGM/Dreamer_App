@@ -22,28 +22,35 @@ function AppCard(props) {
             {
                 margin: "auto",
                 textAlign: "center",
-                padding: "3%",
+                padding: "2%",
             }
         } >
-        <
+        {
+            props.isAuthenticated ? ( <
+                div >
+                <
+                button className = "cardbutton"
+                onClick = { handleClick } >
+                <
+                Tooltip title = "Delete" >
+                <
+                DeleteForeverRoundedIcon / >
+                <
+                /Tooltip>{" "} <
+                /button>{" "} <
+                button className = "cardbutton"
+                onClick = { visualizeTitle } >
+                <
+                Tooltip title = "Visualize Title" >
+                <
+                RemoveRedEyeIcon / >
+                <
+                /Tooltip>{" "} <
+                /button>{" "} <
+                /div>
+            ) : null
+        } { " " } <
         h4 className = "item-date" > { String(props.date).slice(0, 10) } < /h4>{" "} <
-        button className = "cardbutton"
-        onClick = { handleClick } > { " " } <
-        Tooltip title = "Delete" >
-        <
-        DeleteForeverRoundedIcon / >
-        <
-        /Tooltip>{" "} <
-        /button>{" "} <
-        button className = "cardbutton"
-        onClick = { visualizeTitle } >
-        <
-        Tooltip title = "Visualize Title" >
-        <
-        RemoveRedEyeIcon / >
-        <
-        /Tooltip>{" "} <
-        /button>{" "} <
         /div>{" "} <
         div >
         <
@@ -53,7 +60,7 @@ function AppCard(props) {
         p > { props.content } < /p>{" "} <
         /div>{" "} <
         div style = {
-            { margin: "auto", textAlign: "center" } } > { " " } {
+            { margin: "auto", textAlign: "center", padding: "3%" } } > { " " } {
             props.url.length !== 0 && ( <
                 img src = { props.url }
                 alt = { props.title }
@@ -68,6 +75,7 @@ function AppCard(props) {
 
 const mapStateToProps = (state) => ({
     item: state.item, // the itemReducer, named as item in the combined root reducer.
+    isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default connect(mapStateToProps, { generateIMG })(AppCard);

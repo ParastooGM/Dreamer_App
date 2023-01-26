@@ -32,7 +32,7 @@ body {
 
 .AppCard h1 {
     font-size: 1.2em;
-    margin: 8% auto 6% auto;
+    margin: 4% auto 6% auto;
     text-align: center;
 }
 
@@ -54,7 +54,7 @@ body {
 form.create-note {
     position: relative;
     width: 480px;
-    margin: 30px auto 20px auto;
+    margin: 25px auto 20px auto;
     background: #faf9f6;
     padding: 15px;
     border-radius: 7px;
@@ -98,9 +98,8 @@ form.create-note button {
 
 .item-date {
     color: #b2beb5;
-    display: inline;
     font-size: 1.1rem;
-    margin-right: 2%;
+    margin-top: 7%;
 }
 
 .dream-nav-bar {
