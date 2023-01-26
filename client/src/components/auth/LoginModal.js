@@ -13,13 +13,12 @@ import {
 } from "reactstrap";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { register } from "../../actions/authActions";
+import { login } from "../../actions/authActions";
 import { clearErrors } from "../../actions/errorActions";
 
-function RegisterModal(props) {
+function LoginModal(props) {
     const [state, setState] = useState({
         modal: false,
-        name: "",
         email: "",
         password: "",
         msg: null,
@@ -32,7 +31,7 @@ function RegisterModal(props) {
                 modal: false,
             }));
         } else {
-            if (props.error.id === "REGISTER_FAIL") {
+            if (props.error.id === "LOGIN_FAIL") {
                 setState((state) => ({...state, msg: props.error.msg.msg }));
             } else {
                 setState((state) => ({...state, msg: null }));
@@ -60,11 +59,13 @@ function RegisterModal(props) {
     function onSubmit(e) {
         e.preventDefault();
 
-        const { name, email, password } = state;
+        const { email, password } = state;
+        const user = {
+            email,
+            password,
+        };
 
-        // Register user
-        const newUser = { name, email, password };
-        props.register(newUser);
+        props.login(user);
     }
 
     return ( <
@@ -72,13 +73,13 @@ function RegisterModal(props) {
         <
         NavLink onClick = { toggle }
         href = "#" > { " " }
-        Register { " " } <
+        Login { " " } <
         /NavLink>{" "} <
         Modal id = "modal"
         isOpen = { state.modal }
         toggle = { toggle } >
         <
-        ModalHeader toggle = { toggle } > Register < /ModalHeader>{" "} <
+        ModalHeader toggle = { toggle } > Login < /ModalHeader>{" "} <
         ModalBody > { " " } {
             state.msg ? < Alert color = "danger" > { state.msg } < /Alert> : null}{" "} {
                     state.isAuthenticated ? ( <
@@ -89,15 +90,6 @@ function RegisterModal(props) {
                 <
                 FormGroup >
                 <
-                Label
-            for = "name" > Name < /Label>{" "} <
-                Input
-            type = "text"
-            className = "mb-3"
-            name = "name"
-            id = "name"
-            onChange = { onChange } >
-                < /Input>{" "} <
                 Label
             for = "email" > Email < /Label>{" "} <
                 Input
@@ -120,7 +112,7 @@ function RegisterModal(props) {
             style = {
                 { marginTop: "2rem" } }
             block >
-                Register { " " } <
+                Login { " " } <
                 /Button>{" "} <
                 /FormGroup>{" "} <
                 /Form>{" "} <
@@ -130,10 +122,10 @@ function RegisterModal(props) {
         );
     }
 
-    RegisterModal.propTypes = {
+    LoginModal.propTypes = {
         isAuthenticated: PropTypes.bool,
         error: PropTypes.object.isRequired,
-        register: PropTypes.func.isRequired,
+        login: PropTypes.func.isRequired,
         clearErrors: PropTypes.func.isRequired,
     };
 
@@ -142,6 +134,4 @@ function RegisterModal(props) {
         error: state.error, // the errorReducer, named as error in the combined root reducer.
     });
 
-    export default connect(mapStateToProps, { register, clearErrors })(
-        RegisterModal
-    );
+    export default connect(mapStateToProps, { login, clearErrors })(LoginModal);

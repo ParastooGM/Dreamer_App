@@ -52,7 +52,7 @@ router.post("/", (req, res) => {
     });
 });
 
-// @route Post api/useres/auth
+// @route Post api/users/auth
 // @desc Authenticate a user
 // @access Public
 router.post("/auth", (req, res) => {
