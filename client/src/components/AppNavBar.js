@@ -47,15 +47,13 @@ function AppNavBar(props) {
   return (
     <Navbar dark expand="sm" className="mb-5 dream-nav-bar">
       <NavbarBrand className="dream-nav-brand" href="/">
-
         <GiDreamCatcher /> Dream Journal
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
-        
         <Nav
           className="ml-auto"
-          style={{ marginLeft: isAuthenticated ? "78%" : "86%" }}
+          style={{ marginLeft: isAuthenticated ? "75%" : "86%" }}
           navbar
         >
           {isAuthenticated ? authLinks : guestLinks}
