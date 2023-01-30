@@ -45,8 +45,8 @@ body {
     background: #b2beb5;
     color: #fff;
     border: none;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     outline: none;
 }
@@ -123,6 +123,6 @@ form.create-note button {
 .welcome {
     color: white !important;
     font-size: 1.3rem !important;
-    width: 11rem !important;
+    width: 12rem !important;
     margin: auto;
 }

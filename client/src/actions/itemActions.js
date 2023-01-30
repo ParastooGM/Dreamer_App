@@ -53,6 +53,7 @@ export const addItem = (item) => (dispatch, getState) => {
 };
 
 export const generateIMG = (id, prompt) => (dispatch, getState) => {
+    document.getElementById("spinner-img").style.display = "inline-grid";
     axios({
         method: "post",
         url: "https://api.openai.com/v1/images/generations",
@@ -76,7 +77,10 @@ export const generateIMG = (id, prompt) => (dispatch, getState) => {
                     type: GENERATE_IMG,
                     payload: [id, response.data.data[0].url],
                 })
-            );
+            )
+            .then(() => {
+                document.getElementById("spinner-img").style.display = "none";
+            });
     });
 };
 

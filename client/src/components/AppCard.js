@@ -4,6 +4,7 @@ import RemoveRedEyeIcon from "@material-ui/icons/RemoveRedEye";
 import { generateIMG } from "../actions/itemActions";
 import { connect } from "react-redux";
 import { Tooltip } from "@material-ui/core";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 function AppCard(props) {
     function handleClick() {
@@ -25,7 +26,7 @@ function AppCard(props) {
                 padding: "2%",
             }
         } >
-        {
+        { " " } {
             props.isAuthenticated ? ( <
                 div >
                 <
@@ -39,6 +40,8 @@ function AppCard(props) {
                 /Tooltip>{" "} <
                 /button>{" "} <
                 button className = "cardbutton"
+                style = {
+                    { marginRight: "5px" } }
                 onClick = { visualizeTitle } >
                 <
                 Tooltip title = "Visualize Title" >
@@ -47,6 +50,15 @@ function AppCard(props) {
                 <
                 /Tooltip>{" "} <
                 /button>{" "} <
+                CircularProgress id = "spinner-img"
+                style = {
+                    {
+                        display: "none",
+                        width: "25px",
+                        height: "25px",
+                    }
+                }
+                />{" "} <
                 /div>
             ) : null
         } { " " } <
