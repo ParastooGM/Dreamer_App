@@ -9,24 +9,19 @@ import store from "./store";
 import { loadUser } from "./actions/authActions";
 
 function App() {
-    useEffect(() => {
-        store.dispatch(loadUser());
-    }, []);
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
 
-    return ( <
-        Provider store = { store } >
-        <
-        div className = "App" >
-        <
-        AppNavBar / >
-        <
-        CreateArea / >
-        <
-        AppList / >
-        <
-        /div>{" "} <
-        /Provider>
-    );
+  return (
+    <Provider store={store}>
+      <div className="App">
+        <AppNavBar />
+        <CreateArea />
+        <AppList />
+      </div>
+    </Provider>
+  );
 }
 
 export default App;
