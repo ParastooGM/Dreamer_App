@@ -29,7 +29,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://wild-dirndl-worm.cyclic.app",
   "eslintConfig": {
     "extends": [
       "react-app",
