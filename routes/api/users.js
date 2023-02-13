@@ -35,7 +35,7 @@ router.post("/", (req, res) => {
         newUser.save().then((user) => {
             // Info to save in the payload of jwt
             jwt.sign({ id: user.id },
-                config.get("jwtSecret"), { expiresIn: 3600 },
+                process.env.JWT_SECERET, { expiresIn: 3600 },
                 (err, token) => {
                     if (err) throw err;
                     res.json({
@@ -72,7 +72,7 @@ router.post("/auth", (req, res) => {
                 return res.status(400).json({ msg: "Invalid credentials." });
 
             jwt.sign({ id: user.id },
-                config.get("jwtSecret"), { expiresIn: 3600 },
+                process.env.JWT_SECERET, { expiresIn: 3600 },
                 (err, token) => {
                     if (err) throw err;
                     res.json({
