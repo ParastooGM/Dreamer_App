@@ -1,17 +1,17 @@
-import { applyMiddleware } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
-import rootReducer from "./reducers";
-import { composeWithDevTools } from "@redux-devtools/extension";
+import itemReducer from "./reducers/itemReducer";
+import authReducer from "./reducers/authReducer";
+import errorReducer from "./reducers/errorReducer";
 
-const initialState = {};
-
-const middleWare = [thunk];
-
-const store = configureStore(
-  rootReducer,
-  initialState,
-  composeWithDevTools(applyMiddleware(...middleWare))
-);
+const store = configureStore({
+  reducer: {
+    item: itemReducer,
+    error: errorReducer,
+    auth: authReducer,
+  },
+  preloadedState: {},
+  middleware: [thunk],
+});
 
 export default store;
