@@ -9,6 +9,7 @@ import { useEffect } from "react";
 function AppList(props) {
   useEffect(() => {
     props.getItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleDelete(id) {
