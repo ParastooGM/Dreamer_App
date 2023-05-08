@@ -1,2 +1,1 @@
-This web application is a dream journal created with the MERN stack (Mongo DB, Express, React, and Node JS), and JWT authentication.
-Each dream title can be visualized using the OpenAI API to generate the corresponding image.
+This is a deckerized web application created with the MERN stack (Mongo DB, Express, React, and Node JS), and JWT authentication. It is a dream journal where each dream's title can be visualized using OpenAI's image generation API.
